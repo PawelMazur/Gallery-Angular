@@ -1,0 +1,23 @@
+<section class="gallery">
+    <div class="container-gallery">
+        <div class="container-image">
+            <div>
+                <img [src]="img" alt="Image" style="width: 100%; height: 250px;" id="preview">
+            </div>
+        </div>
+        <div class="container-button">
+            <button class="prev" (click)="plusSlides(-1)">&#10094;</button>
+            <button class="next" (click)="plusSlides(1)">&#10095;</button>
+        </div>
+        
+        <div class="caption-container">
+            <p id="caption" #caption></p>
+        </div>
+
+        <ng-container *ngFor="let img of product.imgUrl; let i = index">
+            <div class="column">
+                <img class="thumnbail" #thumnbails [src]="img" (click)="setImage(i)">
+            </div>
+        </ng-container>
+    </div>
+</section>
